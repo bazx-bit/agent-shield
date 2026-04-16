@@ -64,10 +64,10 @@ Add `Agent-Shield` to your config file (`%APPDATA%\Claude\claude_desktop_config.
 }
 ```
 
-### 3. Gemini CLI / Antigravity
-Launch your CLI with the standard MCP injection flag:
+### 3. Gemini CLI
+Launch your CLI and add the server permanently to your environment:
 ```bash
-gemini-cli chat --mcp-server "python -u C:\YOUR_PATH\agent-shield\firewall.py"
+gemini mcp add agent-shield python -u "C:\YOUR_PATH\agent-shield\firewall.py"
 ```
 
 ---
