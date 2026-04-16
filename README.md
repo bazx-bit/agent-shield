@@ -26,11 +26,25 @@ When you give an AI Agent access to your tools, it has the power to destroy file
 
 ---
 
-## 🚀 2-Minute Copypaste Installation
+## 🚀 2-Minute Setup
 
-Agent-Shield works natively with any AI agent that supports the standard Model Context Protocol (MCP). Just point your AI's MCP config to intercept tools via `firewall.py`.
+To use Agent-Shield, you just need to clone the files and point your AI to them.
 
-### 1. Cursor IDE (Native Integration)
+### Step 0: Download & Install
+1. Open your terminal and clone this repository anywhere on your computer:
+   ```bash
+   git clone https://github.com/bazx-bit/agent-shield.git
+   cd agent-shield
+   ```
+2. Install the lightweight requirements:
+   ```bash
+   pip install mcp pyyaml
+   ```
+3. Get the **absolute path** to the `firewall.py` file you just downloaded.
+
+### Step 1: Connect Your AI
+
+**Cursor IDE (Native Integration)**
 1. Open **Cursor Settings** (Gear icon) -> **Features** -> **MCP**.
 2. Click **+ Add New MCP Server**.
 3. Set Name to `Agent-Shield`, Type to `stdio`.
