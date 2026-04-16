@@ -26,29 +26,30 @@ When you give an AI Agent access to your tools, it has the power to destroy file
 
 ---
 
-## 🚀 2-Minute Setup
+## 🚀 1-Step Installation
 
-To use Agent-Shield, you just need to clone the files and point your AI to them.
+Copy and paste this single command into your terminal to download and set up the firewall instantly:
 
-### Step 0: Download & Install
-1. Open your terminal and clone this repository anywhere on your computer:
-   ```bash
-   git clone https://github.com/bazx-bit/agent-shield.git
-   cd agent-shield
-   ```
-2. Install the lightweight requirements:
-   ```bash
-   pip install mcp pyyaml
-   ```
-3. Get the **absolute path** to the `firewall.py` file you just downloaded.
+**For Windows:**
+```powershell
+git clone https://github.com/bazx-bit/agent-shield.git "$HOME\agent-shield" ; cd "$HOME\agent-shield" ; pip install mcp pyyaml
+```
 
-### Step 1: Connect Your AI
+**For Mac / Linux:**
+```bash
+git clone https://github.com/bazx-bit/agent-shield.git ~/agent-shield && cd ~/agent-shield && pip install mcp pyyaml
+```
 
-**Cursor IDE (Native Integration)**
-1. Open **Cursor Settings** (Gear icon) -> **Features** -> **MCP**.
-2. Click **+ Add New MCP Server**.
-3. Set Name to `Agent-Shield`, Type to `stdio`.
-4. Set the Command to: `python "C:\YOUR_PATH\agent-shield\firewall.py"`
+---
+
+## 🔌 Connect to Your AI (Copy-Paste)
+
+Now, just tell your AI to route its brain through the firewall.
+
+**Cursor IDE**
+1. Open **Cursor Settings** (icon) -> **Features** -> **MCP** -> **+ Add New MCP Server**.
+2. Set Name to `Agent-Shield`, Type to `stdio`.
+3. Set Command to your shield path (e.g., `python "C:\Users\YOUR_NAME\agent-shield\firewall.py"`)
 
 ### 2. Claude Desktop
 Add `Agent-Shield` to your config file (`%APPDATA%\Claude\claude_desktop_config.json`):
