@@ -1,0 +1,44 @@
+# Agent-Shield Security Policies
+# Defines how the firewall should handle requests from the AI agent.
+
+default_action: "ask"
+
+# 🧠 PROMPT INJECTION & LEAK DETECTION (Global Watcher)
+# Constantly scans ALL words the AI is saying/using across all tools over the conversation.
+global_scanners:
+  leak_detection:
+    - "sk-ant"               # Claude API Keys
+    - "sk-proj"              # OpenAI API Keys
+    - "AKIA"                 # AWS Keys
+    - "password="            # Hardcoded Passwords
+  prompt_injection:
+    - "ignore previous instructions"
+    - "system prompt"
+    - "you are now"
+    - "bypass"
+
+tools:
+  - name: "list_files"
+    action: "allow"
+    
+  - name: "read_file"
+    action: "allow"
+    deny_patterns:
+      - parameter: "path"
+        patterns: 
+          - ".env"
+          - "id_rsa"
+          - "secret"
+          - "password"
+
+  - name: "write_file"
+    action: "ask" 
+
+  - name: "execute_command"
+    action: "ask"
+    deny_patterns:
+      - parameter: "command"
+        patterns: 
+          - "rm -rf"
+          - "drop table"
+          - "format"
